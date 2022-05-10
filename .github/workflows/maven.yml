@@ -38,7 +38,7 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: piyush102/hms_frontend:latest
+        tags: piyush102/hms_backend:latest
 
     - name: Image Digest
       run: echo ${{ steps.docker_build.outputs.digest }}
