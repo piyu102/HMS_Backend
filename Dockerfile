@@ -1,3 +1,4 @@
 FROM openjdk:8
-COPY target/hospital-backend.jar hospital-backend.jar
-ENTRYPOINT ["java","-jar","hospital-backend.jar"]
+COPY ./target/hospital-backend.jar ./
+WORKDIR ./
+CMD ["java","-jar","hospital-backend.jar"]
