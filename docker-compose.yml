@@ -13,7 +13,7 @@ services:
   mydb:
     image: "mysql:latest"
     ports:
-      - "3307:3306"
+      - "3306:3306"
     container_name: database_container
     volumes:
       - mysql-data4:/var/lib/mysql
