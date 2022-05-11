@@ -1,0 +1,40 @@
+version: '3.5'
+services:
+
+
+
+  reactJS:
+    image: "piyush102/hms_frontend"
+    ports:
+      - "3000:3000"
+    container_name: react-js-container
+    command: npm start
+
+  mydb:
+    image: "mysql:latest"
+    ports:
+      - "3306:3306"
+    container_name: database_container
+    volumes:
+      - mysql-data4:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=hospital_management
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+
+
+  springboot:
+    image: "piyush102/hms_backend"
+    ports:
+      - "8081:8081"
+    container_name: springboot_container_sql1
+#    restart: on-failure
+    environment:
+      - MYSQL_HOST=mydb
+      - MYSQL_PORT=3306
+    depends_on:
+      - mydb
+
+volumes:
+  mysql-data4:
