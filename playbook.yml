@@ -14,4 +14,4 @@
 
     - name: shell docker
       shell:
-        cmd: docker-compose up
+        cmd: docker-compose up -d
