@@ -12,8 +12,10 @@ services:
 
   mydb:
     image: "mysql:latest"
+    expose: 
+      - "3301"
     ports:
-      - "3307:3306"
+      - "3301:3301"
     container_name: database_container
     volumes:
       - mysql-data4:/var/lib/mysql
@@ -32,7 +34,7 @@ services:
 #    restart: on-failure
     environment:
       - MYSQL_HOST=mydb
-      - MYSQL_PORT=3306
+      - MYSQL_PORT=3301
     depends_on:
       - mydb
 
