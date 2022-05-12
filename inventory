@@ -1,2 +1,2 @@
 [ubuntu18]
-127.0.0.1 ansible_user=piyush
+192.168.246.86 ansible_user=piyush
